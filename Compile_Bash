@@ -1,0 +1,31 @@
+# !/bin/bash.
+# Author  Richard Xie,  
+# Copyright  MICROPORT all reserve.
+# Time 24 of Jan 2022
+# Description this script is project compile, you can determine compile project or compile unit test case
+
+
+
+#if $1; then
+
+if [ x$1 != x ]
+then
+
+echo $1
+cd test/
+make
+
+./TestApp
+
+
+
+else
+
+echo $1
+cd src/
+make
+
+fi
+
+
+
