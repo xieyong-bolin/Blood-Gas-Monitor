@@ -33,7 +33,7 @@ Patient::~Patient()
 }
 
 
-INT16U Patient::getAge()
+INT16U Patient::getAge() const
 {
     return patient.age;
 }
@@ -43,7 +43,7 @@ void Patient::setAge(const INT16U age)
     patient.age = age;
 }
 
-INT16U Patient::getGender()
+INT16U Patient::getGender() const
 {
     return patient.gender;
 }
@@ -54,7 +54,7 @@ void Patient::setGender(const INT16U gender)
 }
 
 
-INT16U Patient::getHeight()
+INT16U Patient::getHeight() const
 {
     return patient.height;
 }
@@ -66,7 +66,7 @@ void Patient::setHeight(const INT16U height)
 }
 
 
-INT16U Patient::getWeight()
+INT16U Patient::getWeight() const
 {
     return patient.weight;
 }
@@ -84,13 +84,13 @@ void Patient::setPacemaker(const bool pacemaker)
 }
 
 
-bool Patient::getPacemaker()
+bool Patient::getPacemaker() const
 {
     return patient.pacemaker;
 }
 
 
-std::string Patient::getId()
+std::string Patient::getId() const
 {
     return patient.id;
 }
@@ -129,7 +129,7 @@ void Patient::setPatientInfo(const PATIENT patientinfo)
 }
 
 
-PATIENT Patient::getPatientInfo()
+PATIENT Patient::getPatientInfo() const
 {
     return patient;
 }

@@ -63,7 +63,7 @@ public:
 	void 	insertMuteTechAlarm(INT16 channel, AlarmId id);
 
 	bool 	isVisualOnlyAlarm(AlarmId alarm_id);
-	void 	setAcknowledged(bool ack);
+	bool 	setAcknowledged(bool ack);
 	bool    isPhysicalAlarmExisted();
 
 	void 	setNewPatient();

@@ -31,19 +31,20 @@ class IDeviceModule
 private:
     /* data */
 public:
-    IDeviceModule(/* args */){}
-    IDeviceModule(ModuleFlag f){flag = f;}
-    virtual ~IDeviceModule(){}
+    IDeviceModule(/* args */) {}
+    IDeviceModule(ModuleFlag f) { flag = f; }
+    virtual ~IDeviceModule() {}
 
-    virtual INT8 shakeHand() = 0;  //connect to main board
-    virtual INT8 initModule() = 0; //
+    virtual INT8 shakeHand() = 0;     // connect to main board
+    virtual INT8 initModule() = 0;    //
     virtual INT8 sendMessage() = 0;
     virtual INT8 receiveMesaage() = 0;
     virtual INT8 selftest() = 0;
     virtual INT8 process() = 0;
 
-    ModuleFlag getFlag(){return flag;}
-    void setFlag(ModuleFlag f){flag = f;}
+    ModuleFlag getFlag() { return flag; }
+    void setFlag(ModuleFlag f) { flag = f; }
+
 private:
     ModuleFlag flag;
 };

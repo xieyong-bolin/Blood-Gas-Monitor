@@ -58,5 +58,14 @@ typedef struct eeprom
 }EEPROM, *pEEPROM;
 
 
+enum class FrontEndConfigurtion
+{
+    COModule = 0x1,
+    Param6   = 0x02,
+    PICCO    = 0x04,
+    AG       = 0x08,
+    num      = 5       // this index is for frontend create
+};
+
 
 #endif

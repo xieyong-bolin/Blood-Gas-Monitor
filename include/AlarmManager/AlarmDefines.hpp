@@ -37,30 +37,27 @@ enum class AlarmType
 
 enum class AlarmId
 {
-    UnkownId,
+    unkownId,
     PHHigh,
     PHLow,
     So2High,
     So2Low,
     SPCO2High,
     SPCO2Low,
-    TempHigh,
-    TempLow,
-	BatteryLow,
-	BatteryVeryLow,
-    AlarmNum
+    tempHigh,
+    tempLow,
+	batteryLow,
+	batteryVeryLow,
+    alarmNum
 };
 
 
-typedef struct ALARMMAP
+using AlarmMap = struct ALARMMAP
 {
     AlarmId id;
     AlarmType type;
     AlarmPriority priority;
-}AlarmMap, *pAlarmMap;
-
-
-
+};
 
 
 union AlarmData
@@ -94,7 +91,7 @@ enum class AlarmMode
 };
 
 
-typedef struct tagAlarm
+using ALARM = struct tagAlarm
 {
 	AlarmId 	id;
     AlarmPriority priority;
@@ -107,7 +104,7 @@ typedef struct tagAlarm
 
 	void clear()
 	{
-		id 			= AlarmId::UnkownId;
+		id 			= AlarmId::unkownId;
         priority    = AlarmPriority::unknowPriority;
 		time 		= 0;
 		group_id    = -1;
@@ -116,7 +113,7 @@ typedef struct tagAlarm
 		channel 	= 0;
 		demo	    = false;
 	}
-}ALARM, *PALARM;
+};
 
 
 enum class AlarmAction

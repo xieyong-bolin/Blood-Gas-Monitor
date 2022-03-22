@@ -17,6 +17,8 @@
 #include "datatype.h"
 #include "WorkThread.hpp"
 #include "IDeviceModule.hpp"
+#include "COModule.hpp"
+#include "ParameterModule.hpp"
 #include <vector>
 using namespace std;
 
@@ -30,8 +32,9 @@ public:
     ~FrontEndManager();
 
     INT32U run();
-    bool addDevice(IDeviceModule &device);
+    bool addDevice(IDeviceModule *device);
     bool deleteDevice(ModuleFlag flag);
+    static FrontEndManager* getInstance();
 private:
     std::vector<IDeviceModule*> deviceList;
     /* data */

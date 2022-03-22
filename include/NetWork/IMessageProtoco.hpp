@@ -16,21 +16,19 @@
 
 #include "IEncryptProtoco.hpp"
 
-class  IMessageProtoco
+class IMessageProtoco
 {
 private:
     /* data */
 public:
-    IMessageProtoco(/* args */){}
-    virtual ~IMessageProtoco(){}
+    IMessageProtoco(/* args */) {}
+    virtual ~IMessageProtoco() {}
 
-    virtual void packMessage() = 0;
+    virtual void packMessage()  = 0;
     virtual void parseMessage() = 0;
 
 private:
-    IEncryptProtoco*    encryptProtoco;
+    IEncryptProtoco* encryptProtoco;
 };
-
-
 
 #endif

@@ -72,3 +72,9 @@ INT8 SettingManager::newPatient()
 
     return 0;
 }
+
+
+bool SettingManager::frontEndConfigMask(FrontEndConfigurtion mask)
+{
+    return systemProfile.frontEndConfigurationMask(mask);
+}

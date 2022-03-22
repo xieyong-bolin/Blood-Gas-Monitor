@@ -16,6 +16,12 @@ test folder store all test case and unit test framework and mock.
 
 2. How to build
 
+2.1 set up build environment
+2.1.1 apt-get install vscode
+2.1.2 sudo apt-get install clang-format
+2.1.3 apt-get install qt5-default
+
+2.2 begin build
 run compile bash to compile project. 
 
 ./Compile_Bash

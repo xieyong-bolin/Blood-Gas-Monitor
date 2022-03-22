@@ -25,19 +25,24 @@ AlarmLimitSetting::~AlarmLimitSetting()
 
 INT8 AlarmLimitSetting::loadAlarmSet()
 {
-    
+
+    return 0;
 }
 
 
 INT8 AlarmLimitSetting::saveAlarmSet()
 {
 
+    return 0;   
 }
 
 
 INT8 AlarmLimitSetting::resetAlarmLimit()
 {
     alarmSet.alarmLimitSet.init();
+
+
+    return 0;
 }
 
 

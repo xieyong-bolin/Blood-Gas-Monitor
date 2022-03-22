@@ -29,19 +29,21 @@ public:
 
     void loadData();
     void saveData();
-    
+
+    LanguageId getSystemLanguage() const;
+    void setSystemLanguage(LanguageId id);
+
+    INT16U *getIpAddress();
+    INT8 setIpAddress(INT16U *ipAddressString);
+
+    bool const frontEndConfigurationMask(FrontEndConfigurtion mask);
+
 private:
     void loadSystemProfile();
     void saveSystemProfile();
 
     void loadEEPROM();
     void saveEEPROM();
-
-    LanguageId getSystemLanguage();
-    void setSystemLanguage(LanguageId id);
-
-    INT16U *getIpAddress();
-    INT8 setIpAddress(INT16U *ipAddressString);
 
 private:
     SystemProfileData   systemProfileData;

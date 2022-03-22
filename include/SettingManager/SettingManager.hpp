@@ -28,6 +28,8 @@ public:
     INT8 setPatientInfo(PATIENT &pat);
 
     INT8 newPatient();
+
+    bool frontEndConfigMask(FrontEndConfigurtion mask);
 private:
 	AlarmLimitSetting alarmLimitSetting;
 	Patient patient;

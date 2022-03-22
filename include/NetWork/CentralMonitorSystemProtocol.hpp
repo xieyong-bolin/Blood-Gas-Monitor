@@ -25,12 +25,9 @@ public:
     CentralMonitorSystemProtocol(/* args */);
     ~CentralMonitorSystemProtocol();
 
-
     virtual void packMessage();
     virtual void parseMessage();
 };
-
-
 
 
 #endif

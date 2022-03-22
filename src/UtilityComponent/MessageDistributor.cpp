@@ -44,15 +44,14 @@ MessageDistributor* MessageDistributor::getInstance()
 
 INT32 MessageDistributor::libInit()
 {
-   // loop = new uv_loop_t;
-   // uv_loop_init(loop);
+
 }
 
 
 
 INT32 MessageDistributor::libuvRun()
 {
-  //  uv_run(loop, UV_RUN_DEFAULT);
+
 }
 
 
