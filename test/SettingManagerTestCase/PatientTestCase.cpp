@@ -14,3 +14,14 @@
 
 #include "gtest/gtest.h"
 #include "Patient.hpp"
+
+
+TEST(PatientTestCase, PatientWeightGetAndSet)
+{
+    Patient objective;
+
+    objective.setWeight(10);
+
+    EXPECT_EQ(10, objective.getWeight());
+
+}

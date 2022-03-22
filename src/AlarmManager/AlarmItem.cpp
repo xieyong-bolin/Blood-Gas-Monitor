@@ -15,103 +15,51 @@
 
 AlarmItem::AlarmItem()
 {
-	alarm.clear();
-	alarmPriority = AlarmPriority::unknowPriority;
-	deleted = false;
-	silenced = false;
-	acknowledged = false;
+    alarm.clear();
+    alarmPriority = AlarmPriority::unknowPriority;
+    deleted = false;
+    silenced = false;
+    acknowledged = false;
 }
 
-AlarmItem::AlarmItem( ALARM alarmTemp )
-	:alarm(alarmTemp)
+AlarmItem::AlarmItem(ALARM alarmTemp) : alarm(alarmTemp)
 {
-	alarmPriority = alarmTemp.priority;
-	deleted = false;
-	silenced = false;
-	acknowledged = false;
+    alarmPriority = alarmTemp.priority;
+    deleted = false;
+    silenced = false;
+    acknowledged = false;
 }
 
-AlarmItem::~AlarmItem()
-{
+AlarmItem::~AlarmItem() {}
 
-}
+short AlarmItem::getChannel() const { return alarm.channel; }
 
-short AlarmItem::getChannel() const
-{
-	return alarm.channel;
-}
+AlarmId AlarmItem::getAlarmId() const { return alarm.id; }
 
-AlarmId AlarmItem::getAlarmId() const
-{
-	return alarm.id;
-}
+AlarmData AlarmItem::getAlarmValue() const { return alarm.value; }
 
-AlarmData AlarmItem::getAlarmValue() const
-{
-	return alarm.value;
-}
+AlarmPriority AlarmItem::getPriority() const { return alarmPriority; }
 
-AlarmPriority AlarmItem::getPriority() const
-{
-	return alarmPriority;
-}
+size_t AlarmItem::getAlarmStrId() const { return 0; }
 
-size_t	AlarmItem::getAlarmStrId() const
-{
-	return 0;
-}
+ALARM AlarmItem::getAlarm() const { return alarm; }
 
-ALARM AlarmItem::getAlarm() const
-{
-	return alarm;
-}
+bool AlarmItem::isLatched() const {}
 
-bool AlarmItem::isLatched() const
-{
+bool AlarmItem::getStatus() const { return deleted; }
 
-}
+void AlarmItem::setStatus(bool deletedFlag) { deleted = deletedFlag; }
 
-bool AlarmItem::getStatus() const
-{
-	return deleted;
-}
+INT32U AlarmItem::getTickCount() const { return alarm.tickcout; }
 
-void AlarmItem::setStatus(bool deletedFlag)
-{
-	deleted = deletedFlag;
-}
+bool AlarmItem::isPhysical() const { return true; }
 
-INT32U AlarmItem::getTickCount() const
-{
-	return alarm.tickcout;
-}
+bool AlarmItem::isSilenced() const { return silenced; }
 
-bool AlarmItem::isPhysical() const
-{
-	return true;
-}
+void AlarmItem::setSilenced(bool silencedFlag) { silenced = silencedFlag; }
 
-bool AlarmItem::isSilenced() const
-{
-	return silenced;
-}
+bool AlarmItem::canDisable() const { return true; }
 
-void AlarmItem::setSilenced(bool silencedFlag)
-{
-	silenced = silencedFlag;
-}
+void AlarmItem::setAcknowledged(bool ack) { acknowledged = ack; }
 
-bool AlarmItem::canDisable() const
-{
-	return true;
-}
-
-void AlarmItem::setAcknowledged(bool ack)
-{
-	acknowledged = ack;
-}
-
-bool AlarmItem::isAcknowledged() const
-{
-	return acknowledged;
-}
+bool AlarmItem::isAcknowledged() const { return acknowledged; }

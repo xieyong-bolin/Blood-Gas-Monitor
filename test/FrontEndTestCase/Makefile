@@ -5,17 +5,19 @@
 # File Path:   
 # Author:		Richard Xie
 # Version:		1.0
-# Description: how to build this project
+# Description: use this Makefile to build unit test
 #
 #
 # History:
 #  Date		    Author			CR number	        CR Title
  
- 
-INCLUDE_DIRS = /usr/include/ /usr/local/include/ /usr/include/x86_64-linux-gnu/qt5													\
-				../include/UtilityComponent  ../include/DataStream ../include/AlarmManager         									\
-				../include/SettingManager ../include/NetWork ../include/FrontEnd  ../include/BMScreen  ../include/BMScreen/Screen   \
-				../include/BMScreen/BasicComponents																					\
+INCLUDE_DIRS = /usr/include/ /usr/local/include/ ../../include/    \
+../UnitTestFramework/src											\
+../UnitTestFramework/include/gtest									\
+../UnitTestFramework/include										\
+../UnitTestFramework/include/gtest/internal							\
+../../include/FrontEnd												\
+../../include/UtilityComponent
 
 
 CP = cp -f
@@ -27,7 +29,7 @@ CC = gcc
 CXX = g++
 READELF = readelf
 STRIP = strip
-COMPILE_OPTIONS = $(C11) $(THREAD) -fPIC
+COMPILE_OPTIONS = $(C11) $(THREAD)
 COMMON_LIB_PATH =
 
 #add for code coverage audit..
@@ -39,24 +41,19 @@ else
    LINKERCXX +=
 endif
 
-EXECUTABLE := BMApp    # 可执行文件名
-MAPFILE := BMApp.map
-WL_MAP   := -Wl,-Map=BMApp.map
-SYMSFILE := BMApp.syms
-ELFBAKFILE := BMApp.bak
+EXECUTABLE := TestApp    # 可执行文件名
+MAPFILE := TestApp.map
+WL_MAP   := -Wl,-Map=TestApp.map
+SYMSFILE := TestApp.syms
+ELFBAKFILE := TestApp.bak
 
 
-LIBS := pthread uv
+LIBS := pthread
 
 
-SRC_DIR:=  AlarmManager   \
-			bmApplication \
-			BMScreen		\
-			DataStream		\
-			FrontEnd		\
-			SettingManager \
-			UtilityComponent \
-			NetWork
+# 除了当前目录外，其他的源代码文件目录
+SRC_DIR:=  ../UnitTestFramework/src   \
+../../src/FrontEnd					 \
 
 		   
 CPPFLAGS += $(COMPILE_OPTIONS) $(addprefix -I,$(INCLUDE_DIRS))
@@ -98,9 +95,6 @@ $(EXECUTABLE) : $(OBJS)
 	$(CXX) $(WL_MAP) -o $(EXECUTABLE) $(OBJS) $(addprefix -l,$(LIBS)) $(LINKERCXX)
 #	$(CP) $(EXECUTABLE) $(ELFBAKFILE)
 	$(STRIP) $(EXECUTABLE)
-	$(CP) $(EXECUTABLE) $(MAPFILE) Target/Bin
-	-$(RM-F) $(EXECUTABLE)
-	-$(RM-F) $(MAPFILE)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

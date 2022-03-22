@@ -19,18 +19,16 @@ using namespace std;
 
 #include "datatype.h"
 
-class  IEncryptProtoco
+class IEncryptProtoco
 {
 private:
     /* data */
 public:
-    IEncryptProtoco(/* args */){}
-    virtual ~IEncryptProtoco(){}
+    IEncryptProtoco(/* args */) {}
+    virtual ~IEncryptProtoco() {}
 
     virtual INT8 encryptData(std::string &input, std::string &output) = 0;
     virtual INT8 decryptData(std::string &input, std::string &output) = 0;
 };
-
-
 
 #endif

@@ -1,7 +1,7 @@
 /**
  * Copyright 2022-2032 by MICROPORT
  *
- * File Name:  	AlarmLimitSettingTestCase
+ * File Name:  	LanDeviceTestCase.cpp
  * File Path:   
  * Author:		Richard Xie
  * Version:		1.0
@@ -13,13 +13,12 @@
  */
 
 #include "gtest/gtest.h"
-#include "AlarmLimitSetting.hpp"
+#include "LanDevice.hpp"
 
-
-TEST(AlarmLimitSettingTestCase, AlarmLimitSettingresetAlarmLimit)
+TEST(LanDeviceTestCase, AlarmDispatchFunctionsetAcknowledgedTest)
 {
-    AlarmLimitSetting objective;
+    LanDevice objective;
 
-    EXPECT_EQ(0, objective.resetAlarmLimit());
+    EXPECT_TRUE(objective.setAcknowledged(false));
 
 }

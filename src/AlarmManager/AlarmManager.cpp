@@ -15,55 +15,40 @@
 #include "AlarmManager.hpp"
 
 
-AlarmManager::AlarmManager():WorkThread("AlarmManager")
-{
+AlarmManager::AlarmManager() : WorkThread("AlarmManager") {}
 
 
-
-}
-
-
-AlarmManager::~AlarmManager()
-{
-
-
-
-}
+AlarmManager::~AlarmManager() {}
 
 
 INT32U AlarmManager::run()
 {
-	while( 1 )
-	{
-
-        if(isStopping())
+    while (1)
+    {
+        if (isStopping())
             break;
 
-        if(isSuspend())
+        if (isSuspend())
         {
-            usleep(100000);	// unit in microsecond.
+            usleep(100000);    // unit in microsecond.
 
             continue;
         }
 
         manageAlarm();
-        usleep(100000);	// unit in microsecond.
-
-	}
+        usleep(100000);    // unit in microsecond.
+    }
 }
 
 
-void AlarmManager::manageAlarm()
-{
-
-}
+void AlarmManager::manageAlarm() {}
 
 
 AlarmManager *AlarmManager::getInstance()
 {
     static AlarmManager *instance = nullptr;
 
-    if(nullptr == instance)
+    if (nullptr == instance)
     {
         instance = new AlarmManager;
     }

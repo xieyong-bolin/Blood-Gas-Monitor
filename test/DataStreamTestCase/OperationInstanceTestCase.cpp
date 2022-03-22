@@ -1,7 +1,7 @@
 /**
  * Copyright 2022-2032 by MICROPORT
  *
- * File Name:  	AlarmLimitSettingTestCase
+ * File Name:  	OperationInstanceTestCase.cpp
  * File Path:   
  * Author:		Richard Xie
  * Version:		1.0
@@ -13,13 +13,10 @@
  */
 
 #include "gtest/gtest.h"
-#include "AlarmLimitSetting.hpp"
+#include "OperationInstance.hpp"
 
-
-TEST(AlarmLimitSettingTestCase, AlarmLimitSettingresetAlarmLimit)
+TEST(OperationInstanceTestCase, AlarmDispatchFunctionsetAcknowledgedTest)
 {
-    AlarmLimitSetting objective;
 
-    EXPECT_EQ(0, objective.resetAlarmLimit());
-
+    EXPECT_TRUE(OperationInstance::getInstance()->clearData());
 }

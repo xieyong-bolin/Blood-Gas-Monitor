@@ -23,7 +23,6 @@ FrontEndManager::~FrontEndManager()
 }
 
 
-
 INT32U FrontEndManager::run()
 {
     while (1)
@@ -48,9 +47,9 @@ INT32U FrontEndManager::run()
 }
 
 
-bool FrontEndManager::addDevice(IDeviceModule &device)
+bool FrontEndManager::addDevice(IDeviceModule *device)
 {
-    deviceList.push_back(&device);
+    deviceList.push_back(device);
 }
 
 
@@ -68,4 +67,18 @@ bool FrontEndManager::deleteDevice(ModuleFlag flag)
             break;
         }
     }
+}
+
+
+FrontEndManager* FrontEndManager::getInstance()
+{
+    static FrontEndManager *ptr = nullptr;
+
+    if (ptr == nullptr)
+    {
+        /* code */
+        ptr = new FrontEndManager;
+    }
+
+    return ptr;
 }

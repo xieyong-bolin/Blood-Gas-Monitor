@@ -15,7 +15,9 @@ INCLUDE_DIRS = /usr/include/ /usr/local/include/ ../../include/    \
 ../UnitTestFramework/src											\
 ../UnitTestFramework/include/gtest									\
 ../UnitTestFramework/include										\
-../UnitTestFramework/include/gtest/internal							
+../UnitTestFramework/include/gtest/internal							\
+../../include/SettingManager										\
+../../include/UtilityComponent
 
 
 CP = cp -f

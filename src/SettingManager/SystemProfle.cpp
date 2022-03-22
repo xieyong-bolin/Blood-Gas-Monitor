@@ -61,7 +61,7 @@ void SystemProfile::saveEEPROM()
 }
 
 
-LanguageId SystemProfile::getSystemLanguage()
+LanguageId SystemProfile::getSystemLanguage() const
 {
     return systemProfileData.languageId;
 }
@@ -82,4 +82,11 @@ INT16U* SystemProfile::getIpAddress()
 INT8 SystemProfile::setIpAddress(INT16U* ipAddressString)
 {
     memcpy(eeprom.ipAddress, ipAddressString, sizeof(eeprom.ipAddress));
+}
+
+
+bool const SystemProfile::frontEndConfigurationMask(FrontEndConfigurtion mask)
+{
+
+    return true;
 }

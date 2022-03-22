@@ -14,6 +14,7 @@
 #include <string.h>
 #include "AudioWaveParser.hpp"
 
+
 AudioWaveParser::AudioWaveParser()
 {
     byteData = NULL;
@@ -33,6 +34,7 @@ void AudioWaveParser::setFile(char* fileName)
 	memset(file, 0, sizeof(file));
 	snprintf(file, sizeof(file), "%s", fileName);
 }
+
 
 //read RIFF
 bool AudioWaveParser::readRiff()

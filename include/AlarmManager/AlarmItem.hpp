@@ -25,23 +25,23 @@ public:
 	AlarmItem(ALARM alarmTemp);
 	virtual ~AlarmItem();
 
-	time_t			getTimestamp()const{return alarm.time;};
-	INT16 			getChannel()const;
-	AlarmId 		getAlarmId()const;
-	AlarmData		getAlarmValue()const;
-	AlarmPriority	getPriority()const;
-	size_t			getAlarmStrId()const;
-	ALARM			getAlarm()const;
-	bool			isLatched()const;
-	bool 			getStatus()const;
+	time_t			getTimestamp()const {return alarm.time;};
+	INT16 			getChannel() const;
+	AlarmId 		getAlarmId() const;
+	AlarmData		getAlarmValue() const;
+	AlarmPriority	getPriority() const;
+	size_t			getAlarmStrId() const;
+	ALARM			getAlarm() const;
+	bool			isLatched() const;
+	bool 			getStatus() const;
 	void 			setStatus(bool deletedFlag);
-	INT32U			getTickCount()const;
-	bool 			isPhysical()const;
-	bool 			isSilenced()const;
+	INT32U			getTickCount() const;
+	bool 			isPhysical() const;
+	bool 			isSilenced() const;
 	void 			setSilenced(bool silencedFlag);
-	bool 			canDisable()const;
+	bool 			canDisable() const;
 	void			setAcknowledged(bool ack);
-	bool			isAcknowledged()const;
+	bool			isAcknowledged() const;
 private:
 	ALARM			alarm;
 	AlarmPriority	alarmPriority;

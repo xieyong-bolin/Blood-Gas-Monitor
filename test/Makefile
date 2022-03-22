@@ -14,6 +14,8 @@
 INCLUDE_DIRS = /usr/include/ /usr/local/include/ ../../include/    \
 ../include/UtilityComponent										\
 ../include/DataStream											\
+../include/SettingManager										\
+../include/AlarmManager											\
 UnitTestFramework/src											\
 UnitTestFramework/include/gtest									\
 UnitTestFramework/include										\
@@ -57,8 +59,13 @@ LIBS := pthread
 # test case
 SRC_DIR:=  	UnitTestFramework/src   			\
             UtilityComponentTestCase			\
+			SettingManagerTestCase				\
+			AlarmManagerTestCase				\
+			DataStreamTestCase					\
             ../src/UtilityComponent             \
-			../src/DataStream
+			../src/SettingManager				\
+			../src/DataStream					\
+			../src/AlarmManager	
 
 CPPFLAGS := $(CXXFLAGS)			
 CPPFLAGS += $(COMPILE_OPTIONS) $(addprefix -I,$(INCLUDE_DIRS))
